@@ -28,6 +28,6 @@ describe('Home Page E2E Test', () => {
 
         const text = await heading.getText();
 
-        expect(text).toBe('Welcome to CI/CD');
+        expect(text).toBe('Hello DevOps');
     });
 });
