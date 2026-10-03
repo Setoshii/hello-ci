@@ -20,9 +20,16 @@ pipeline {
             }
         }
 
+        stage('Start Web App') {
+            steps {
+                sh 'nohup node src/app.js > app.log 2>&1 &'
+                sh 'sleep 3'
+            }
+        }
+
         stage('Test') {
             steps {
-                sh 'npm test'
+                sh 'npx jest tests/math.test.js'
             }
         }
 
